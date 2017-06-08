@@ -22,7 +22,7 @@
   </style>
 </head>
 <body>
-    <img src="public/logo.png" alt=""> <br>
+    <img src="{{URL::to('public/logo.png')}}" alt=""> <br>
     <small>Bienvenido a Perk Framework</small>
 </body>
 </html>
