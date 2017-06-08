@@ -1,0 +1,14 @@
+<?php use IlluminateDatabaseCapsuleManager as Capsule;
+
+class {name} extends Migration
+{
+
+    public function create()
+    {
+        Capsule::schema()->create('users', function($table)
+        {
+              $table->increments('id');
+        });
+    }
+
+}

@@ -1,0 +1,25 @@
+{
+    "name": "perk",
+    "description": "Perk framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "AbrahamHuerta",
+            "email": "abrahamhuertadev@gmail.com"
+        }
+    ],
+    "require": {
+        "paudebau/h2o-php": "dev-master",
+        "illuminate/database": "~4.2",
+        "philo/laravel-blade": "2.*",
+        "filp/whoops": "^2.1",
+        "symfony/console": "2.6.7"
+    },
+    "autoload": {
+        "classmap": [
+            "app/models",
+            "app/commands"
+        ]
+    },
+    "minimum-stability": "stable"
+}

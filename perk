@@ -1,0 +1,37 @@
+#!/usr/bin/env php
+
+<?php
+
+define('ROOT', realpath(dirname(__FILE__)) . '/');
+define('APP', ROOT . 'app/');
+require_once ROOT . 'vendor/autoload.php';
+
+/*foreach (new DirectoryIterator(APP . 'models/') as $fileInfo) {
+    if($fileInfo->isDot()) continue;
+    	require_once APP . 'models/'. $fileInfo;
+}*/
+
+require_once APP . 'config/database.php';
+
+foreach (new DirectoryIterator(ROOT . 'core/lib') as $fileInfo) {
+    if($fileInfo->isDot()) continue;
+    	require_once ROOT . 'core/lib/'. $fileInfo;
+}
+
+foreach (new DirectoryIterator(ROOT . 'core/system') as $fileInfo) {
+    if($fileInfo->isDot()) continue;
+    	require_once ROOT . 'core/system/'. $fileInfo;
+}
+
+require_once APP . 'config/app.php';
+
+use Symfony\Component\Console\Application;
+
+$application = new Application('Perk Framework', '0.1.0');
+
+# add our commands
+$application->add(new ControllerMake());
+$application->add(new ModelMake());
+$application->add(new ViewMake());
+
+$application->run();
